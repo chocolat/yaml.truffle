@@ -1,0 +1,16 @@
+(detector
+    (extension yaml)
+    (extension yml))
+
+(folding
+    (start `^[^#]\s*.*:(\s*\[?| &.+)?$`)
+    (stop `^\s*$|^\s*\}|^\s*\]|^\s*\)`))
+
+(shell-variables
+    (TM_COMMENT_START [# ]))
+
+(comment.line [# ])
+
+(indentation.decrease [^\s+\}$])
+
+(indentation.increase [^\s*.*(:|-) ?(&\w+)?(\{[^}"']*|\([^)"']*)?$])

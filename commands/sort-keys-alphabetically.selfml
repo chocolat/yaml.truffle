@@ -1,0 +1,15 @@
+(trigger
+    (key [[f5]]))
+
+(name [Sort Keys Alphabetically])
+
+(only-in source.yaml)
+
+(input selection)
+
+(output replace-selected)
+
+(save nothing)
+
+(script [#!/usr/bin/env ruby
+print (s = STDIN.read).split(/^#{indent = s.scan(/^(\s*)\b/).flatten.first}(?=\w)/).sort.join(indent)])

@@ -1,0 +1,21 @@
+(trigger
+    (key [[ctrl][shift]H]))
+
+(name [Convert Document / Selection to Ruby])
+
+(only-in source.yaml)
+
+(input selection)
+
+(output new-document)
+
+(save nothing)
+
+(script [#!/usr/bin/env ruby
+
+require "yaml"
+require "pp"
+
+puts "#!/usr/bin/env ruby\n\n"
+print "documents = "
+pp(YAML.load_stream(STDIN).documents)])

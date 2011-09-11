@@ -1,0 +1,8 @@
+(name [key: value])
+
+(trigger
+    (key [[ctrl][shift]:]))
+
+(only-in [source.yaml - string])
+
+(snippet [%{1="key"}: %{2="value"}%{0}])
